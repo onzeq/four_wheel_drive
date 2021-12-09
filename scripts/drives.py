@@ -2,35 +2,38 @@ import time
 from adafruit_motorkit import MotorKit
 import board
 
+SPEED_VAL:float = 1
 
-def forward(motor, value:float):
-    motor.throttle = value
+def forward(motors:list, value:float):
+    for motor in motors:
+        motor.throttle = value
     
 
-def stop(motor):
-    motor.throttle = 0
+def stop(motors):
+    for motor in motors:
+        motor.throttle = 0
 
-
-
-def main():
+def get_motors() ->list :
     kit = MotorKit(i2c=board.I2C())
     
-    m1 = kit.motor1
-    m2 = kit.motor2
-    m3 = kit.motor3
-    m4 = kit.motor4
+    m_vr = kit.motor1
+    m_vl = kit.motor2
+    m_hr = kit.motor3
+    m_hl = kit.motor4
 
-    motors = [m1, m2, m3, m4]
+    return [m_vr, m_vl, m_hr, m_hl]
+
+def main():
+    
+    motors = get_motors()
     
     while 1:
 
-        for motor in motors:
-            forward(motor, 1.0)
+        forward(motors, SPEED_VAL)
     
         time.sleep(2)
     
-        for motor in motors:
-            stop(motor)
+        stop(motors)
 
         time.sleep(2)
     
