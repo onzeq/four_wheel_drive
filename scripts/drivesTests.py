@@ -2,22 +2,30 @@ import drives
 import time
 import keyboard
 
-SIM_DUR:float = 4.0
+SIM_DUR:float = 15.0
+SLEEP_DUR:float = 0.5
 def main():
     motors = drives.get_motors()
-    start_time = time.time()
+     
+    
+    print("driving method testing")
 
-    diff = 0 
+    start_time = time.time()
+    diff = 0
+    counter = 1
     
     while diff < SIM_DUR:
         
         diff = time.time() - start_time
         
-        counter = 1
-        speed = (counter%10)/10
-        drives.forward(motors, -0.9)
-        time.sleep(0.1)
-
+        
+        speed = 0.2 + (counter%8)/10
+        counter = counter + 1
+        drives.forward(motors, speed)
+        time.sleep(SLEEP_DUR)
+        
+        print(speed)
+    
     drives.stop(motors)
 
         
