@@ -16,22 +16,22 @@ class MotorDriver:
 
     def callback_command(self, msg:Drives_command):
         rospy.loginfo("Command received")
-        if(msg.command == drives.FORWARD):
+        if(msg.command.data == drives.FORWARD):
             self.drives.forward(msg.speed_val)
             rospy.loginfo("Forward command executed")
-        elif(msg.command == drives.BACKWARD):
+        elif(msg.command.data == drives.BACKWARD):
             self.drives.backward(msg.speed_val)
             rospy.loginfo("Backward command executed")
-        elif(msg.command == drives.LEFT_ANGULAR):
+        elif(msg.command.data == drives.LEFT_ANGULAR):
             self.drives.left_angular(msg.speed_val)
             rospy.loginfo("Left angular command executed")
-        elif(msg.command == drives.RIGHT_ANGULAR):
+        elif(msg.command.data == drives.RIGHT_ANGULAR):
             self.drives.right_angular(msg.speed_val)
             rospy.loginfo("Right angular command executed")
-        elif(msg.command == drives.TURN_LEFT):
+        elif(msg.command.data == drives.TURN_LEFT):
             self.drives.turn_left(msg.speed_val)
             rospy.loginfo("Turn left command executed")
-        elif(msg.command == drives.TURN_RIGHT):
+        elif(msg.command.data == drives.TURN_RIGHT):
             self.drives.turn_right(msg.speed_val)
             rospy.loginfo("Turn right command executed")
         else:
