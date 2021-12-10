@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import rospy
 from four_wheel_drive.msg import Drives_command
+from std_msgs.msg import UInt8
 from rospy.exceptions import ROSInterruptException
 import driver_scripts.drives as drives
 
@@ -11,13 +12,14 @@ def command_publisher():
 
 
     msg = Drives_command()
-    msg.command = drives.FORWARD
-    msg.speed_val = 0.7
+    
+    msg.command.data = UInt8(drives.FORWARD)
+    msg.speed_val.data = 0.7
 
-    counter = 0
+    
     while not rospy.is_shutdown():
         rospy.loginfo("In Loop")
-        counter = 1
+        
         pub.publish(msg)
         rate.sleep()
 
