@@ -1,0 +1,27 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "",
+        "limitSymbolsToIncludedHeaders": true
+      },
+      "includePath": [
+        "/opt/ros/noetic/include/**",
+        "/home/jake/catkin_ws/devel/include/**",
+        "/home/jake/catkin_ws/src/beginner_tutorials/include/**",
+        "/home/jake/catkin_ws/src/cob_scan_unifier/include/**",
+        "/home/jake/catkin_ws/src/four_wheel_drive/include/**",
+        "/home/jake/catkin_ws/src/neo_common/include/**",
+        "/home/jake/catkin_ws/src/neo_kinematics_omnidrive/include/**",
+        "/home/jake/catkin_ws/src/realsense-ros/realsense2_camera/include/**",
+        "/home/jake/catkin_ws/src/sawyer_simulator/sawyer_gazebo/include/**",
+        "/home/jake/catkin_ws/src/sawyer_simulator/sawyer_hardware_interface/include/**",
+        "/home/jake/catkin_ws/src/sawyer_simulator/sawyer_sim_controllers/include/**",
+        "/home/jake/catkin_ws/src/sns_ik_lib/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS"
+    }
+  ],
+  "version": 4
+}

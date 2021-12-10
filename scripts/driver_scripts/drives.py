@@ -5,6 +5,14 @@ import board
 
 
 SPEED_VAL:float = 0.5
+FORWARD = 0
+BACKWARD = 2
+LEFT_ANGULAR = 4
+RIGHT_ANGULAR = 8
+TURN_LEFT = 16
+TURN_RIGHT = 32
+STOP = 64
+
 
 class Drives:
     """Motor drives class with methods to power and steer the motors
@@ -90,7 +98,7 @@ class Drives:
         self.motors[3].throttle = value
 
 
-    def turn_right(self, value:float):
+    def turn_left(self, value:float):
         """Powers motors to drive left moving forward.
         Output Voltage between 0V and 12V
 

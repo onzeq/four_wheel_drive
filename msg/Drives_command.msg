@@ -1,2 +1,2 @@
-std_msgs/String command
+std_msgs/UInt8 command
 std_msgs/Float32 speed_val
