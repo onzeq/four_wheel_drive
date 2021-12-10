@@ -46,6 +46,8 @@ def listener():
             stop(motor)
 
         time.sleep(2)
+    
+    rospy.get_param()
 
     # spin() simply keeps python from exiting until this node is stopped
     rospy.spin()
