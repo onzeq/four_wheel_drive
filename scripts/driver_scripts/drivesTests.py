@@ -5,7 +5,7 @@ import keyboard
 SIM_DUR:float = 15.0
 SLEEP_DUR:float = 0.5
 def main():
-    drives = Drives
+    drives = Drives()
      
     
     print("driving method testing")
