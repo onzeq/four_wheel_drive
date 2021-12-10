@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 import rospy
 from driver_scripts.drives import Drives
 import driver_scripts.drives as drives
@@ -7,11 +7,11 @@ from four_wheel_drive.msg import Drives_command
 from std_srvs.srv import Trigger
 
 class MotorDriver:
-    def __init__(self) -> None:
+    def __init__(self):
         
         ub = rospy.Subscriber('drives_commander', Drives_command, self.callback_command)
         self.drives = Drives()
-        rospy.Service("stop_motor", Trigger, self.callback_stop)
+        #rospy.Service("stop_motor", Trigger, self.callback_stop)
 
 
     def callback_command(self, msg:Drives_command):
