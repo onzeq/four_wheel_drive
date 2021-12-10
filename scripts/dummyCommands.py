@@ -13,7 +13,7 @@ def command_publisher():
 
     msg = Drives_command()
     
-    msg.command.data = UInt8(drives.FORWARD)
+    msg.command.data = drives.FORWARD
     msg.speed_val.data = 0.7
 
     
