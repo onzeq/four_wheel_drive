@@ -10,11 +10,11 @@ def main():
 
         counter = 1
         speed = (counter%10)/10
-        drives.forward(motors, counter%10)
+        drives.forward(motors, 0.5)
         time.sleep(0.1)
 
         try:
-            if(keyboard.is_pressed('esc')):
+            if(keyboard.is_pressed('a')):
                 drives.stop(motors)
 
         except:
