@@ -50,7 +50,7 @@ def main():
     rospy.init_node("motor_driver")
     motor_driver = MotorDriver()
 
-    rospy.on_shutdown(motor_driver.stop()) 
+    #rospy.on_shutdown(motor_driver.stop()) 
     rospy.loginfo("Motor driver is now started, ready to get commands.")
     rospy.spin()
 
