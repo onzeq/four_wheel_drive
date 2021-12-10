@@ -4,9 +4,15 @@ import board
 
 
 
-SPEED_VAL:float = 1
+SPEED_VAL:float = 0.5
 
 def forward(motors:list, value:float):
+    """ """
+
+    for motor in motors:
+        motor.throttle = value
+
+def backward(motors:list, value:float):
     for motor in motors:
         motor.throttle = value
 
