@@ -13,12 +13,12 @@ def main():
         drives.forward(motors, 0.5)
         time.sleep(0.1)
 
-        try:
-            if(keyboard.is_pressed('a')):
-                drives.stop(motors)
-
-        except:
+        
+        if(keyboard.is_pressed('esc')):
+            drives.stop(motors)
             break
+
+        
 
 
 if __name__ == '__main__':
