@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 import rospy
 from driver_scripts.drives import Drives
 import driver_scripts.drives as drives

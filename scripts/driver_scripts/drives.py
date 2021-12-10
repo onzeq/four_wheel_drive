@@ -116,8 +116,10 @@ class Drives:
     def stop(self):
         """Sets output voltage to 0V and stop 
         Output Voltage between 0V and 12V"""
-        for motor in self.motors:
-            motor.throttle = 0
+        self.motors[0].throttle = 0
+        self.motors[1].throttle = 0
+        self.motors[2].throttle = 0
+        self.motors[3].throttle = 0
 
 
 
