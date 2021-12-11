@@ -1,6 +1,5 @@
-from drives import Drives
 import time
-import keyboard
+from drives import Drives
 
 SIM_DUR:float = 15.0
 SLEEP_DUR:float = 0.5

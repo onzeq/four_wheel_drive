@@ -3,7 +3,7 @@ import rospy
 from four_wheel_drive.msg import Drives_command
 from std_msgs.msg import UInt8
 from rospy.exceptions import ROSInterruptException
-from driver_scripts.drives import Commands
+from driver_scripts.constants import Commands
 
 def command_publisher():
     pub = rospy.Publisher("drives_commander", Drives_command, queue_size=10)
