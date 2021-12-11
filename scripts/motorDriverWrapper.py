@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import rospy
 from driver_scripts.drives import Drives
-import driver_scripts.drives as drives
+from driver_scripts.drives import Commands
 
 from four_wheel_drive.msg import Drives_command
 from std_srvs.srv import Trigger
@@ -16,22 +16,22 @@ class MotorDriver:
 
     def callback_command(self, msg:Drives_command):
         rospy.loginfo("Command received")
-        if(msg.command.data == drives.FORWARD):
+        if(msg.command.data == Commands.FORWARD):
             self.drives.forward(msg.speed_val.data)
             rospy.loginfo("Forward command executed")
-        elif(msg.command.data == drives.BACKWARD):
+        elif(msg.command.data == Commands.BACKWARD):
             self.drives.backward(msg.speed_val.data)
             rospy.loginfo("Backward command executed")
-        elif(msg.command.data == drives.LEFT_ANGULAR):
+        elif(msg.command.data == Commands.LEFT_ANGULAR):
             self.drives.left_angular(msg.speed_val.data)
             rospy.loginfo("Left angular command executed")
-        elif(msg.command.data == drives.RIGHT_ANGULAR):
+        elif(msg.command.data == Commands.RIGHT_ANGULAR):
             self.drives.right_angular(msg.speed_val.data)
             rospy.loginfo("Right angular command executed")
-        elif(msg.command.data == drives.TURN_LEFT):
+        elif(msg.command.data == Commands.TURN_LEFT):
             self.drives.turn_left(msg.speed_val.data)
             rospy.loginfo("Turn left command executed")
-        elif(msg.command.data == drives.TURN_RIGHT):
+        elif(msg.command.data == Commands.TURN_RIGHT):
             self.drives.turn_right(msg.speed_val.data)
             rospy.loginfo("Turn right command executed")
         else:
