@@ -3,7 +3,7 @@ import rospy
 from four_wheel_drive.msg import Drives_command
 from std_msgs.msg import UInt8
 from rospy.exceptions import ROSInterruptException
-import driver_scripts.drives as drives
+from driver_scripts.drives import Commands
 
 def command_publisher():
     pub = rospy.Publisher("drives_commander", Drives_command, queue_size=10)
@@ -13,7 +13,7 @@ def command_publisher():
 
     msg = Drives_command()
     
-    msg.command.data = drives.FORWARD
+    msg.command.data = Commands.FORWARD
     msg.speed_val.data = 0.7
 
     
