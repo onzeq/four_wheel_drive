@@ -16,7 +16,6 @@ class MotorDriver:
 
     def callback_command(self, msg:Drives_command):
         rospy.loginfo("Command received")
-        rospy.loginfo(msg)
         if(msg.command.data == Commands.FORWARD):
             self.drives.forward(msg.speed_val.data)
             rospy.loginfo("Forward command executed")
