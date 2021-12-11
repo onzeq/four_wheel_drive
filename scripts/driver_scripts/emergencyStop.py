@@ -1,7 +1,7 @@
-from driver_scripts.drives import Drives
+from drives import Drives
 
 def main():
-    motors = Drives
+    motors = Drives()
     motors.stop()
 
 

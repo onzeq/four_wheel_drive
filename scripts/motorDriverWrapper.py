@@ -17,22 +17,22 @@ class MotorDriver:
     def callback_command(self, msg:Drives_command):
         rospy.loginfo("Command received")
         if(msg.command.data == drives.FORWARD):
-            self.drives.forward(msg.speed_val)
+            self.drives.forward(msg.speed_val.data)
             rospy.loginfo("Forward command executed")
         elif(msg.command.data == drives.BACKWARD):
-            self.drives.backward(msg.speed_val)
+            self.drives.backward(msg.speed_val.data)
             rospy.loginfo("Backward command executed")
         elif(msg.command.data == drives.LEFT_ANGULAR):
-            self.drives.left_angular(msg.speed_val)
+            self.drives.left_angular(msg.speed_val.data)
             rospy.loginfo("Left angular command executed")
         elif(msg.command.data == drives.RIGHT_ANGULAR):
-            self.drives.right_angular(msg.speed_val)
+            self.drives.right_angular(msg.speed_val.data)
             rospy.loginfo("Right angular command executed")
         elif(msg.command.data == drives.TURN_LEFT):
-            self.drives.turn_left(msg.speed_val)
+            self.drives.turn_left(msg.speed_val.data)
             rospy.loginfo("Turn left command executed")
         elif(msg.command.data == drives.TURN_RIGHT):
-            self.drives.turn_right(msg.speed_val)
+            self.drives.turn_right(msg.speed_val.data)
             rospy.loginfo("Turn right command executed")
         else:
             rospy.logwarn("Command not recogniced, stop motors")
@@ -50,7 +50,7 @@ def main():
     rospy.init_node("motor_driver")
     motor_driver = MotorDriver()
 
-    #rospy.on_shutdown(motor_driver.stop()) 
+    rospy.on_shutdown(motor_driver.stop) 
     rospy.loginfo("Motor driver is now started, ready to get commands.")
     rospy.spin()
 
