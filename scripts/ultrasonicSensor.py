@@ -14,8 +14,8 @@ SONAR_SPEED = 17150.0
 def GPIO_setup():
     rospy.loginfo("Setup GPIO for Sonar Sensor")
     GPIO.setmode(GPIO.BCM)
-    GPIO_setup(TRIG, GPIO.OUT)
-    GPIO_setup(ECHO, GPIO.IN)
+    GPIO.setup(TRIG, GPIO.OUT)
+    GPIO.setup(ECHO, GPIO.IN)
     GPIO.output(TRIG, False) 
     rospy.loginfo("Setup Sonar Sensor finished. Settle Sensor")
     rospy.sleep(0.2)
