@@ -2,8 +2,8 @@
 import rospy
 from std_srvs.srv import Trigger
 from four_wheel_drive.msg import Drives_command
-from driver_scripts.drives import Drives
-import driver_scripts.constants as constants
+from drives import Drives
+import constants as constants
 
 
 

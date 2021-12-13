@@ -3,7 +3,7 @@ import RPi.GPIO as GPIO
 import rospy
 
 from four_wheel_drive.msg import Drives_command
-import driver_scripts.constants as constants
+import constants
 
 
 TRIG = 21
