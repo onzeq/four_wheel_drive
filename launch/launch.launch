@@ -1,5 +1,5 @@
 <launch>
-  <node name="sonar_sensor" pkg="four_wheel_drive" type="publisher" output="screen"/>
-  <node name="dummy_commander" pkg="four_wheel_drive" type="publisher" output="screen"/>
-  <node name="motor_driver" pkg="four_wheel_drive" type="subscriber" output="screen"/>
+  <node name="sonar_sensor" pkg="four_wheel_drive" type="ultrasonicSensor.py" output="screen"/>
+  <node name="dummy_commander" pkg="four_wheel_drive" type="dummyCommands.py" output="screen"/>
+  <node name="motor_driver" pkg="four_wheel_drive" type="motorDriverWrapper.py" output="screen"/>
 </launch>
