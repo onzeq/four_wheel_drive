@@ -25,7 +25,7 @@ def command_publisher():
         rospy.loginfo(msg)
         
         rate.sleep()
-        msg.speed_val.data = 0.2
+        msg.speed_val.data = 0.3
 
 
 
