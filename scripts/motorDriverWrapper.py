@@ -18,7 +18,7 @@ class MotorDriver:
 
     def callback_command(self, msg:Drives_command):
         rospy.loginfo("Command received")
-        rospy.logdebug(msg)
+        rospy.loginfo(msg)
         if(msg.command.data == constants.FORWARD):
             self.__drives.forward(msg.speed_val.data)
             rospy.loginfo("Forward command executed")
@@ -37,6 +37,9 @@ class MotorDriver:
         elif(msg.command.data == constants.TURN_RIGHT):
             self.__drives.turn_right(msg.speed_val.data)
             rospy.loginfo("Turn right command executed")
+        elif(msg.command.data == constants.STOP):
+            self.__drives.stop()
+            rospy.loginfo("Stop command executed")
         else:
             rospy.logwarn("Command not recogniced, stop motors")
             self.__drives.stop()

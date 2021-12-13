@@ -24,7 +24,7 @@ def GPIO_setup():
 
 def distance_calculation():
     #send burst
-    rospy.sleep(2)
+    
     GPIO.output(TRIG, True)
     rospy.sleep(1e-5)
     GPIO.output(TRIG, False)
@@ -38,6 +38,7 @@ def distance_calculation():
 
 def callback_shutdown():
     GPIO.output(TRIG, False)
+    print("PIN low")
 
 
 def main():
@@ -48,13 +49,13 @@ def main():
     rospy.on_shutdown(callback_shutdown)
     GPIO_setup()
 
-    rate = rospy.Rate(20)
+    rate = rospy.Rate(15)
     msg = Drives_command()
-    msg.command = constants.STOP
-    msg.speed_val = 0.0
+    msg.command.data = constants.STOP
+    msg.speed_val.data = 0.0
     while not rospy.is_shutdown():
         distance = distance_calculation()
-        rospy.loginfo("Distance in cm: " + distance)
+        rospy.loginfo("Distance in cm: %f", distance)
         if(distance < constants.MIN_DISTANCE):
             pub_sensor.publish(msg)
         rate.sleep()

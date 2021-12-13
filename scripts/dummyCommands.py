@@ -7,21 +7,23 @@ import constants
 
 def command_publisher():
     pub = rospy.Publisher("drives_commander", Drives_command, queue_size=10)
-    rospy.init_node("dummy_commander", anonymous=True)
+    rospy.init_node("dummy_commander")
     rate = rospy.Rate(1)
 
 
     msg = Drives_command()
     
     msg.command.data = constants.FORWARD
-    msg.speed_val.data = 0.5
+    msg.speed_val.data = 0.3
 
     flag = 0
     while not rospy.is_shutdown():
         rospy.loginfo("In Loop")
-        if flag == 0:
-            pub.publish(msg)
-            flag =1
+        
+        pub.publish(msg)
+        rospy.loginfo("Published message:")
+        rospy.loginfo(msg)
+        
         rate.sleep()
         msg.speed_val.data = 0.2
 
@@ -31,7 +33,7 @@ def main():
     try:
         command_publisher()
     except rospy.ROSInterruptException:
-        pass
+        rospy.logwarn("ROSInterruptException")
 
 
 if __name__ == '__main__':
