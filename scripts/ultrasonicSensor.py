@@ -50,7 +50,7 @@ def main():
 
     rate = rospy.Rate(20)
     msg = Drives_command()
-    msg.command = constants.STOP()
+    msg.command = constants.STOP
     msg.speed_val = 0.0
     while not rospy.is_shutdown():
         distance = distance_calculation()
