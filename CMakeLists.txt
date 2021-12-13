@@ -8,6 +8,7 @@ project(four_wheel_drive)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
+  roslaunch
   message_generation
   roscpp
   rospy
@@ -161,8 +162,8 @@ include
 ## Mark executable scripts (Python etc.) for installation
 ## in contrast to setup.py, you can choose the destination
 # catkin_install_python(PROGRAMS scripts/motorDriverWrapper.py scripts/dummyCommands.py 
- #scripts/ultrasonicSensor.py scripts/constants.py scripts/drives.py  
-  # DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+#scripts/ultrasonicSensor.py scripts/constants.py scripts/drives.py  
+# DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 #)
 
 ## Mark executables for installation
