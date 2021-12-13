@@ -11,7 +11,7 @@ STOP            = 64
 
 SPEED_VAL:float = 0.5
 
-MIN_DISTANCE = 5.0
+MIN_DISTANCE = 10
 
 
 def main():
