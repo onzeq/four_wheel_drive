@@ -31,7 +31,7 @@ def distance_calculation():
     while GPIO.input(ECHO) == 0:
         pulse_start = rospy.get_time()
     while GPIO.input(ECHO) == 1:
-        pulse_end = rospy.get_time
+        pulse_end = rospy.get_time()
     
     pulse_duration = pulse_end-pulse_start
     return pulse_duration*SONAR_SPEED
