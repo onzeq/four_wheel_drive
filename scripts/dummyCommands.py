@@ -16,11 +16,12 @@ def command_publisher():
     msg.command.data = constants.FORWARD
     msg.speed_val.data = 0.5
 
-    
+    flag = 0
     while not rospy.is_shutdown():
         rospy.loginfo("In Loop")
-        
-        pub.publish(msg)
+        if flag == 0:
+            pub.publish(msg)
+            flag =1
         rate.sleep()
         msg.speed_val.data = 0.2
 
